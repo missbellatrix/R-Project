@@ -69,3 +69,11 @@ print(lavTestLRT(fit_free, fit_fix))
 write_csv(fit_summary, "output/cfa_fit_v2_v3.csv")
 write_csv(validity_tab(fits$v3)$ave_cr, "output/reliability_validity_v3.csv")
 saveRDS(fits$v3, "output/fit_cfa_v3.rds")
+vt <- validity_tab(fits$v3)
+write.csv(vt$fornell_larcker, "output/fornell_larcker_v3.csv")
+if (!is.null(htmt_v3)) write.csv(round(htmt_v3, 3), "output/htmt_v3.csv")
+write_csv(as_tibble(lavInspect(fits$v3, "cor.lv"), rownames = "construct"),
+          "output/latent_correlations_v3.csv")
+standardizedSolution(fits$v3) %>% as_tibble() %>% filter(op == "=~") %>%
+  select(construct = lhs, item = rhs, loading = est.std, se, pvalue) %>%
+  write_csv("output/cfa_loadings_v3.csv")

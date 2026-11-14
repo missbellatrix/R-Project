@@ -1,0 +1,11 @@
+feature,mean_abs_shap
+ATU,0.2143
+PE,0.1273
+RISK,0.0367
+DIFF,0.0251
+private,0.0148
+chatgpt,0.0135
+field_grp_STEM,0.0057
+s1,0.0053
+female,0.0038
+field_grp_Social.sci...education,0.0029

@@ -1,0 +1,16 @@
+feature_set,model,mean_rmse,mean_rsq,std_err_rmse,std_err_rsq
+all,linear,0.455,0.51,0.01,0.02
+all,random forest,0.474,0.483,0.008,0.018
+all,xgboost,0.468,0.485,0.01,0.02
+constructs,linear,0.454,0.511,0.01,0.02
+constructs,random forest,0.476,0.464,0.009,0.018
+constructs,xgboost,0.471,0.477,0.009,0.02
+demographics,linear,0.629,0.074,0.011,0.01
+demographics,random forest,0.635,0.061,0.011,0.01
+demographics,xgboost,0.635,0.06,0.011,0.01
+extended,linear,0.424,0.569,0.01,0.02
+extended,random forest,0.432,0.56,0.009,0.019
+extended,xgboost,0.43,0.558,0.009,0.019
+no_ATU,linear,0.509,0.391,0.011,0.024
+no_ATU,random forest,0.518,0.377,0.009,0.019
+no_ATU,xgboost,0.51,0.386,0.01,0.023

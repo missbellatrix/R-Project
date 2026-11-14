@@ -152,9 +152,12 @@ run_paths <- function(gv) {
   G  <- nlevels(d[[gv]])
   lv <- levels(d[[gv]])
   
-  fit_free <- sem(mg_syntax(G), data = d, group = gv, estimator = "MLR")
-  fit_eq   <- sem(plain_syntax, data = d, group = gv, estimator = "MLR",
-                  group.equal = "regressions")
+  # group.label fixes the group ORDER to the factor levels. Without it lavaan
+  # orders groups by first appearance in the data, which can mislabel groups.
+  fit_free <- sem(mg_syntax(G), data = d, group = gv, group.label = lv,
+                  estimator = "MLR")
+  fit_eq   <- sem(plain_syntax, data = d, group = gv, group.label = lv,
+                  estimator = "MLR", group.equal = "regressions")
   
   overall <- lavTestLRT(fit_free, fit_eq)   # all seven paths equal across groups?
   

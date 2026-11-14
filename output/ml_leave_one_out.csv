@@ -1,0 +1,11 @@
+model,dropped,rsq_without,rsq_full,loss
+linear,PE,0.472,0.51,0.038
+linear,DIFF,0.512,0.51,-0.002
+linear,ATU,0.391,0.51,0.119
+linear,RISK,0.502,0.51,0.009
+linear,demographics,0.511,0.51,-0
+random forest,PE,0.424,0.47,0.046
+random forest,DIFF,0.472,0.47,-0.002
+random forest,ATU,0.377,0.47,0.093
+random forest,RISK,0.458,0.47,0.012
+random forest,demographics,0.441,0.47,0.03

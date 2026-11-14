@@ -1,0 +1,5 @@
+chisq_p,cramers_v,variable
+0,0.291,education (S1)
+0,0.197,university (private)
+0.0276,0.095,gender (female)
+0.3518,0.063,field group

@@ -138,3 +138,15 @@ write_csv(fit_tbl,      "output/structural_fit_v3.csv")
 write_csv(path_compare, "output/wlsmv_vs_mlr_paths_v3.csv")
 saveRDS(fit_full,   "output/fit_structural_full_v3.rds")
 saveRDS(model_full, "output/model_full_syntax_v3.rds")
+
+r2 <- lavInspect(fit_full, "rsquare")[c("ATU", "MIUA")]
+write_csv(tibble(construct = names(r2), r2 = round(as.numeric(r2), 3)),
+          "output/r2_v3.csv")
+
+library(semPlot)
+png("output/fig_structural_v3.png", width = 2000, height = 1200, res = 250)
+semPaths(fit_full, what = "std", whatLabels = "std", structural = TRUE,
+         layout = "tree2", residuals = FALSE, intercepts = FALSE,
+         thresholds = FALSE, nCharNodes = 0, sizeLat = 9,
+         edge.label.cex = 1.1, edge.color = "black")
+dev.off()
